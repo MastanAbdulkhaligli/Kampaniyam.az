@@ -1,0 +1,194 @@
+{
+  "announcement": [
+    {
+      "id": 10,
+      "content": "Elan Yerlesdirmek Isteyenlere Ilk 3 Ay Pulsuz",
+      "color": "008080",
+      "colorlazimsiz": "360033"
+    }
+  ],
+
+  "cards": [
+    {
+      "id": 1,
+      "name": "Qulagciq Hediyye",
+      "company": "Samsung",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "11",
+      "price": "2250",
+      "category": "Technology",
+      "image": "https://www.soliton.az/images/articles/2020/08/06/thumb1000x0_20200806052850719.jpg?2022-05-08+19%3A08%3A09"
+    },
+    {
+      "id": 2,
+      "name": "Qulagciq Hediyye",
+      "company": "Lorem",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "6",
+      "price": "18",
+      "category": "Pub",
+      "image": "https://i.ytimg.com/vi/ty3jeEvxlqY/maxresdefault.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Pilot 65",
+      "company": "Adore",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "7",
+      "price": "120",
+      "category": "Parfumery",
+      "image": "https://cdn.shopify.com/s/files/1/0424/4979/7275/products/DUO4sa1W0AAF721_960x640.jpg?v=1637261638"
+    },
+    {
+      "id": 4,
+      "name": "Gazelli",
+      "company": "Adore",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "6",
+      "price": "40",
+      "category": "Parfumery",
+      "image": "https://cdn.trend.az/2022/05/29/600x410/gazelli_parfum_290522_5.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Limitsiz Pive",
+      "company": "Pauliner",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "29",
+      "price": "20",
+      "category": "PubRestaurant",
+      "image": "https://gravityinc.az/assets/core/portfolio/c5a1455-1586900047.jpg"
+    },
+
+    {
+      "id": 5,
+      "name": "Ac Hamburger",
+      "company": "HMBRGR",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas ",
+      "date": "9",
+      "price": "12",
+      "category": "Restaurant",
+      "image": "https://recipe-graphics.grocerywebsite.com/0_GraphicsRecipes/4589_4k.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Ice Americano",
+      "company": "95 Degree",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "10",
+      "price": "4.30",
+      "category": "CofeeShop",
+      "image": "https://primarycoffee.com/wp-content/uploads/how-to-make-an-iced-americano.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Ice Americano",
+      "company": "95 Degree",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "10",
+      "price": "4.30",
+      "category": "CofeeShop",
+      "image": "https://primarycoffee.com/wp-content/uploads/how-to-make-an-iced-americano.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Ice Americano",
+      "company": "95 Degree",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "10",
+      "price": "4.30",
+      "category": "CofeeShop",
+      "image": "https://primarycoffee.com/wp-content/uploads/how-to-make-an-iced-americano.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Ice Americano",
+      "company": "95 Degree",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "10",
+      "price": "4.30",
+      "category": "CofeeShop",
+      "image": "https://primarycoffee.com/wp-content/uploads/how-to-make-an-iced-americano.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Ice Americano",
+      "company": "95 Degree",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "10",
+      "price": "4.30",
+      "category": "CofeeShop",
+      "image": "https://primarycoffee.com/wp-content/uploads/how-to-make-an-iced-americano.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Ice Americano",
+      "company": "95 Degree",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "10",
+      "price": "4.30",
+      "category": "CofeeShop",
+      "image": "https://primarycoffee.com/wp-content/uploads/how-to-make-an-iced-americano.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Ice Americano",
+      "company": "95 Degree",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.",
+      "date": "10",
+      "price": "4.30",
+      "category": "CofeeShop",
+      "image": "https://primarycoffee.com/wp-content/uploads/how-to-make-an-iced-americano.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Ac Hamburger",
+      "company": "HMBRGR",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas ",
+      "date": "9",
+      "price": "12",
+      "category": "Restaurant",
+      "image": "https://recipe-graphics.grocerywebsite.com/0_GraphicsRecipes/4589_4k.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Ac Hamburger",
+      "company": "HMBRGR",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas ",
+      "date": "9",
+      "price": "12",
+      "category": "Restaurant",
+      "image": "https://recipe-graphics.grocerywebsite.com/0_GraphicsRecipes/4589_4k.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Ac Hamburger",
+      "company": "HMBRGR",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas ",
+      "date": "9",
+      "price": "12",
+      "category": "Restaurant",
+      "image": "https://recipe-graphics.grocerywebsite.com/0_GraphicsRecipes/4589_4k.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Ac Hamburger",
+      "company": "HMBRGR",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas ",
+      "date": "9",
+      "price": "12",
+      "category": "Restaurant",
+      "image": "https://recipe-graphics.grocerywebsite.com/0_GraphicsRecipes/4589_4k.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Ac Hamburger",
+      "company": "HMBRGR",
+      "about": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas.Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptasLorem ipsum dolor sit amet consectetur adipisicing elit. Alias explicabo blanditiis aspernatur consectetur nisi voluptas ",
+      "date": "9",
+      "price": "12",
+      "category": "Restaurant",
+      "image": "https://recipe-graphics.grocerywebsite.com/0_GraphicsRecipes/4589_4k.jpg"
+    }
+  ]
+}

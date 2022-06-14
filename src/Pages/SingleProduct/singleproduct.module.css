@@ -1,0 +1,134 @@
+.singleProductContainer {
+  /* max-width: 1100px; */
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+}
+
+.spLeft {
+  width: 55%;
+  position: relative;
+  margin-right: 60px;
+  margin-left: 90px;
+}
+
+.spRight {
+  width: 35%;
+  margin-top: 20px;
+}
+
+.spImage {
+  width: 100%;
+  /* position: absolute; */
+  left: 0;
+  top: 0;
+  /* opacity: 0; */
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.border {
+  width: 70%;
+  border-top: 1px solid #e1e8ee;
+  margin-top: 10px;
+}
+
+.productDescription span {
+  font-size: 12px;
+  color: #358ed7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.productDescription h1 {
+  font-weight: 300;
+  font-size: 52px;
+  color: #43484d;
+  letter-spacing: -2px;
+}
+
+.productDescription p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939e;
+  line-height: 24px;
+}
+
+.productPrice {
+  display: flex;
+  align-items: center;
+}
+
+.productPrice span {
+  font-size: 26px;
+  font-weight: 300;
+  color: #43474d;
+  margin-right: 20px;
+}
+
+.loveBtn {
+  display: inline-block;
+  background-color: #7dc855;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all 0.5s;
+}
+
+.loveBtn:hover {
+  background-color: #246401;
+}
+
+.location {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.locationIcon {
+  border: none;
+  margin-right: 5px;
+  background-color: white;
+  cursor: pointer;
+  color: #2ea6da;
+}
+
+.timeLeft {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.clock {
+  margin-right: 5px;
+  border: none;
+  background-color: white;
+  color: #0c9d4d;
+  font-size: 23px;
+}
+
+@media (max-width: 940px) {
+  .singleProductContainer {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+  .spLeft {
+    width: 90%;
+    position: relative;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+  .spRight {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .productDescription h1 {
+    font-weight: 300;
+    font-size: 32px;
+    color: #43484d;
+    letter-spacing: -2px;
+  }
+}

@@ -1,0 +1,136 @@
+.signInContainer {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #dd5e89, #f7bb97);
+  font-family: "Montserrat", sans-serif;
+}
+
+.formBody::-webkit-scrollbar {
+  display: none;
+}
+
+.containerForm {
+  max-width: 500px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.containerForm .titleForm {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.titleForm::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(135deg, #dd5e89, #f7bb97);
+}
+.containerForm form .userDetails {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0 12px 0;
+}
+
+form .userDetails .inputBox {
+  margin-bottom: 15px;
+}
+.userDetails .inputBox .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Responsive eleyende font size el ele */
+.userDetails .inputBox input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  padding-left: 15px;
+  font-size: 16px;
+  transition: all 0.3 ease;
+}
+
+.userDetails .inputBox input:focus {
+  border-color: #0b8793;
+}
+/* .userDetails .inputBox input:valid {
+    border-color: #9b59b6;
+  } */
+
+form .genderDetails .genderTitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+form .genderDetails .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  /* justify-content: space-between; */
+  justify-content: space-evenly;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form .regButton {
+  height: 45px;
+  margin: 45px;
+}
+
+form .regButton input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background: #358ed7;
+}
+
+form .regButton input:hover {
+  background: linear-gradient(135deg, #360033, #0b8793);
+}
+
+.errorForm {
+  color: #bf1650;
+}
+
+.errorForm::before {
+  display: inline;
+  content: "⚠ ";
+}
+
+@media (max-width: 584px) {
+  .containerForm {
+    max-width: 100%;
+  }
+
+  form .userDetails .inputBox {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .containerForm form .userDetails {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+}
