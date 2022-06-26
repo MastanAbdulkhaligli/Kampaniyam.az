@@ -11,7 +11,9 @@ const SingleProduct = () => {
 
   useEffect(() => {
     const getSingleData = async () => {
-      const { data } = await axios(`http://localhost:3001/cards/${productId}`);
+      const { data } = await axios(
+        `http://localhost:3003/api/product/find/${productId}`
+      );
       setSingleData(data);
     };
     getSingleData();

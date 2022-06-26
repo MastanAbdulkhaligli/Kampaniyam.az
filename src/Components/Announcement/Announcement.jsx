@@ -36,7 +36,7 @@ const Announcement = () => {
 
   // Get header Info from API
   const getHeader = () => {
-    const promise = axios.get("http://localhost:3001/announcement");
+    const promise = axios.get("http://localhost:3003/api/header");
     promise.then((result) => {
       setAnnouncementContent(result.data[0].content);
       setColor(result.data[0].color);

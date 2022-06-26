@@ -114,7 +114,7 @@ const ReadMore = styled.p`
 `;
 
 const Card = ({
-  id,
+  _id,
   name,
   company,
   about,
@@ -127,11 +127,11 @@ const Card = ({
   const dispatch = useDispatch();
   const favor = useSelector((state) => state.favourites.products);
 
-  let heartBool = favor.filter((item) => item.id === data.id);
+  let heartBool = favor.filter((item) => item._id === data._id);
   let mybool = heartBool.length === 0 ? false : true;
 
   const onClick = () => {
-    let res = favor.filter((item) => item.id === data.id);
+    let res = favor.filter((item) => item._id === data._id);
     //let res = favor.filter((item) => item.data.id === data.id);
 
     if (res.length == 0) {
@@ -145,12 +145,12 @@ const Card = ({
     <CardDesign color={hashTable[category]}>
       <CardImage image={image}></CardImage>
       <CardText>
-        <Link to={`/product/${id}`} style={{ textDecoration: "none" }}>
+        <Link to={`/product/${_id}`} style={{ textDecoration: "none" }}>
           <CardDate>{name}</CardDate>
         </Link>
         <CardTitle>{company}</CardTitle>
         <CardDescription>{about}</CardDescription>
-        <Link to={`/product/${id}`} style={{ textDecoration: "none" }}>
+        <Link to={`/product/${_id}`} style={{ textDecoration: "none" }}>
           <ReadMore>Daha Etrafli</ReadMore>
         </Link>
       </CardText>

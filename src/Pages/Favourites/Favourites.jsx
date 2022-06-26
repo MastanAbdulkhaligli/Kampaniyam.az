@@ -17,24 +17,43 @@ const Favourites = () => {
   const search = useSelector((state) => state.search.searchInput);
   const favor = useSelector((state) => state.favourites.products);
 
+  const timeLeft = (start, end) => {
+    start = new Date(start.substring(0, 10));
+    end = new Date(end.substring(0, 10));
+    console.log(start);
+    const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+    const diffTime = Math.abs(end - start);
+    const diffDays = Math.ceil(diffTime / _MS_PER_DAY);
+    return diffDays;
+  };
+
   return (
     <Container>
       {favor
         .filter((item) =>
-          item.name.toLowerCase().replace(/\s/g, "").includes(search)
+          item.kampaniyaName.toLowerCase().replace(/\s/g, "").includes(search)
         )
         .map((item) => {
-          const { id, name, company, about, date, price, category, image } =
-            item;
+          const {
+            _id,
+            kampaniyaName,
+            owner,
+            aboutProduct,
+            startDate,
+            endDate,
+            price,
+            category,
+            image,
+          } = item;
 
           return (
-            <div key={item.id}>
+            <div key={item._id}>
               <Card
-                id={id}
-                name={name}
-                company={company}
-                about={about}
-                date={date}
+                id={_id}
+                name={kampaniyaName}
+                company={owner}
+                about={aboutProduct}
+                date={timeLeft(startDate, endDate)}
                 price={price}
                 category={category}
                 image={image}
