@@ -19,6 +19,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
+  const [reset, setReset] = useState(false);
 
   const timeLeft = (start, end) => {
     start = new Date(start.substring(0, 10));
@@ -32,33 +33,26 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios(
-        "http://localhost:3003/api/product/pagination?page=0"
+        search
+          ? `http://localhost:3003/api/product/pagination?page=0&search=${search}`
+          : `http://localhost:3003/api/product/pagination?page=0`
       );
+
       setData(data.posts);
     };
 
-    getData();
-  }, []);
+    if (search.length === 0 || search.length > 2) {
+      setHasMore(true);
+      setPage(1);
+      getData();
+    }
 
-  // Implementing Search with Backend
-
-  // useEffect(() => {
-  //   const getSearchedData = async () => {
-  //     const { data } = await axios(
-  //       "http://localhost:3003/api/product/pagination?page=0"
-  //     );
-  //     console.log(data.posts[0].hashTag.join(""));
-  //     setData(data.posts);
-  //   };
-
-  //   getSearchedData();
-  // }, []);
-
-  // End of Implementing search with backend
+    console.log(page);
+  }, [search]);
 
   const fetchPosts = async () => {
     const { data } = await axios(
-      `http://localhost:3003/api/product/pagination?page=${page}`
+      `http://localhost:3003/api/product/pagination?page=${page}&search=${search}`
     );
 
     return data.posts;
@@ -90,18 +84,18 @@ const Home = () => {
       >
         <Container>
           {data
-            .filter(
-              (item) =>
-                item.kampaniyaName
-                  .toLowerCase()
-                  .replace(/\s/g, "")
-                  .includes(search) ||
-                item.hashTag
-                  .join("")
-                  .toLowerCase()
-                  .replace(/\s/g, "")
-                  .includes(search)
-            )
+            // .filter(
+            //   (item) =>
+            //     item.kampaniyaName
+            //       .toLowerCase()
+            //       .replace(/\s/g, "")
+            //       .includes(search) ||
+            //     item.hashTag
+            //       .join("")
+            //       .toLowerCase()
+            //       .replace(/\s/g, "")
+            //       .includes(search)
+            // )
             .map((item) => {
               const {
                 _id,
