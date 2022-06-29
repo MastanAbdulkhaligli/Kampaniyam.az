@@ -11,6 +11,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 25px;
+  min-height: 600px;
 `;
 
 const Favourites = () => {
@@ -45,11 +46,11 @@ const Favourites = () => {
             category,
             image,
           } = item;
-
           return (
             <div key={item._id}>
+              {console.log(item._id)}
               <Card
-                id={_id}
+                _id={_id}
                 name={kampaniyaName}
                 company={owner}
                 about={aboutProduct}

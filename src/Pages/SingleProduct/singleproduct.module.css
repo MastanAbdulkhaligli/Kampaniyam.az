@@ -4,6 +4,16 @@
   padding: 15px;
   display: flex;
   font-family: "Roboto", sans-serif;
+  min-height: 650px;
+}
+
+.productDescription h2 {
+  color: rgb(255, 7, 110);
+  margin-bottom: 5px;
+}
+
+.productDescription {
+  margin-top: -30px;
 }
 
 .spLeft {
@@ -44,7 +54,7 @@
 
 .productDescription h1 {
   font-weight: 300;
-  font-size: 52px;
+  font-size: 40px;
   color: #43484d;
   letter-spacing: -2px;
 }
@@ -110,16 +120,20 @@
   font-size: 23px;
 }
 
+/* .categoryText {
+  margin-bottom: 30px;
+} */
+
 @media (max-width: 940px) {
   .singleProductContainer {
     flex-direction: column;
-    margin-top: 60px;
   }
   .spLeft {
     width: 90%;
     position: relative;
     margin-right: 20px;
     margin-left: 10px;
+    margin-bottom: 40px;
   }
   .spRight {
     width: 100%;

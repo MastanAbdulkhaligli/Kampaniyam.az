@@ -1,15 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useDispatch, useSelector } from "react-redux";
 import Heart from "react-heart";
 import {
   addProduct,
   deleteProduct,
 } from "../../Features/Favourites/favouritesSlice";
-import { border } from "@mui/system";
 
 let hashTable = {
   Technology: "50, 168, 115",
@@ -125,6 +122,7 @@ const Card = ({
   data,
 }) => {
   const dispatch = useDispatch();
+
   const favor = useSelector((state) => state.favourites.products);
 
   let heartBool = favor.filter((item) => item._id === data._id);
@@ -132,8 +130,6 @@ const Card = ({
 
   const onClick = () => {
     let res = favor.filter((item) => item._id === data._id);
-    //let res = favor.filter((item) => item.data.id === data.id);
-
     if (res.length == 0) {
       dispatch(addProduct({ data }));
     } else {

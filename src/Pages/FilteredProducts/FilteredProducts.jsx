@@ -18,11 +18,11 @@ const FilteredProducts = () => {
   const [data, setData] = useState([]);
   const search = useSelector((state) => state.search.searchInput);
 
-  const timeLeft = (start, end) => {
-    start = new Date(start.substring(0, 10));
+  const timeLeft = (end) => {
     end = new Date(end.substring(0, 10));
+    const today = new Date();
     const _MS_PER_DAY = 1000 * 60 * 60 * 24;
-    const diffTime = Math.abs(end - start);
+    const diffTime = Math.abs(end - today);
     const diffDays = Math.ceil(diffTime / _MS_PER_DAY);
     return diffDays;
   };
@@ -64,7 +64,7 @@ const FilteredProducts = () => {
                 name={kampaniyaName}
                 company={owner}
                 about={aboutProduct}
-                date={timeLeft(startDate, endDate)}
+                date={timeLeft(endDate)}
                 price={price}
                 category={category}
                 image={image}
