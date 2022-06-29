@@ -4,6 +4,9 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Card from "../../Components/Cards/Card";
 
+import FavouritesComponent from "../../Components/Favourites/FavouritesComponent";
+import Empty from "../../Components/Empty/Empty";
+
 const Container = styled.div`
   max-width: 1600px;
   display: flex;
@@ -29,41 +32,13 @@ const Favourites = () => {
   };
 
   return (
-    <Container>
-      {favor
-        .filter((item) =>
-          item.kampaniyaName.toLowerCase().replace(/\s/g, "").includes(search)
-        )
-        .map((item) => {
-          const {
-            _id,
-            kampaniyaName,
-            owner,
-            aboutProduct,
-            startDate,
-            endDate,
-            price,
-            category,
-            image,
-          } = item;
-          return (
-            <div key={item._id}>
-              {console.log(item._id)}
-              <Card
-                _id={_id}
-                name={kampaniyaName}
-                company={owner}
-                about={aboutProduct}
-                date={timeLeft(startDate, endDate)}
-                price={price}
-                category={category}
-                image={image}
-                data={item}
-              />
-            </div>
-          );
-        })}
-    </Container>
+    <>
+      {favor.length !== 0 ? (
+        <FavouritesComponent />
+      ) : (
+        <Empty location={"Favourites"} />
+      )}
+    </>
   );
 };
 

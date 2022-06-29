@@ -1,0 +1,13 @@
+.emptyContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 170px;
+  text-align: center;
+  color: rgb(255, 7, 110);
+}
+
+.isEmptyHeader {
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+}

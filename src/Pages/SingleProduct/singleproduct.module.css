@@ -44,6 +44,20 @@
   margin-top: 10px;
 }
 
+.seperator {
+  width: 100%;
+  border-top: 1.5px solid #e1e8ee;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.others {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 10px;
+}
+
 .productDescription span {
   font-size: 12px;
   color: #358ed7;
