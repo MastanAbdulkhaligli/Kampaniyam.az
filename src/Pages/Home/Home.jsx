@@ -18,7 +18,7 @@ const Container = styled.div`
   /* min-height: 800px; */
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  margin: 0 auto;
   justify-content: center;
   gap: 25px;
 `;

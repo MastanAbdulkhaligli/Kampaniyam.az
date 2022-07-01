@@ -21,7 +21,8 @@ const Container = styled.div`
   /* min-height: 800px; */
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
+  margin: 0 auto;
   justify-content: center;
   gap: 25px;
 `;
@@ -104,6 +105,17 @@ const SingleProduct = () => {
               {mybool ? " Seçilmiş elanlardan sil  " : "Seçilmiş elanlara at"}
             </a>
           </div>
+          <iframe
+            className={style.googleMap}
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12160.114471226065!2d49.8193296!3d40.3638898!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbe2c7f91235a9778!2sBeerBasha%20Restaurant!5e0!3m2!1sen!2s!4v1656555013888!5m2!1sen!2s"
+            width="300"
+            height="200"
+            frameborder="0"
+            style={{ border: 0 }}
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
         </div>
       </div>
       <div className={style.seperator}></div>
@@ -144,8 +156,9 @@ const SingleProduct = () => {
       <h2 className={style.others}>
         {data.category} kategoriyasinda olan diger Kampaniyalar
       </h2>
-
-      <RecommendationCategory categoryName={data.category} />
+      <Container>
+        <RecommendationCategory categoryName={data.category} />
+      </Container>
     </>
   );
 };

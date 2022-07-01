@@ -7,6 +7,11 @@
   min-height: 650px;
 }
 
+.googleMap {
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
 .productDescription h2 {
   color: rgb(255, 7, 110);
   margin-bottom: 5px;

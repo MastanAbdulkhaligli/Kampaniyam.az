@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "../../Features/Search/Search.jsx";
 import style from "./navbar.module.css";
 import SearchIcon from "@mui/icons-material/Search";

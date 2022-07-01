@@ -6,9 +6,12 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 
 const Container = styled.div`
+  max-width: 1600px;
+  /* min-height: 800px; */
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
+  margin: 0 auto;
   justify-content: center;
   gap: 25px;
 `;
