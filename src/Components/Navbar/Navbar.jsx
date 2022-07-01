@@ -9,12 +9,14 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useSelector } from "react-redux";
 
 import { Link, NavLink } from "react-router-dom";
+import kampaniyamLogo from "../../kampaniyamLogo.svg";
 
 const Navbar = () => {
   const navLinkStyles = ({ isActive }) => {
     return {
       textDecoration: "none",
       fontWeight: isActive ? "bold" : "normal",
+      color: isActive && "#51cfdb",
     };
   };
 
@@ -24,11 +26,19 @@ const Navbar = () => {
   return (
     <nav>
       <ul>
-        <li className={style.logo}>
-          <NavLink to="/" style={{ textDecoration: "none" }}>
-            Kampaniya.net
-          </NavLink>
-        </li>
+        <div>
+          <li className={style.logo}>
+            <NavLink to="/" style={{ textDecoration: "none" }}>
+              <img
+                className={style.logoImage}
+                style={{ backgroundColor: "#111324" }}
+                src={kampaniyamLogo}
+                alt=""
+              />
+              Kampaniyam.az
+            </NavLink>
+          </li>
+        </div>
 
         <li className={style.btn}>
           <span>
@@ -38,7 +48,7 @@ const Navbar = () => {
         <div className={style.items} id={showLinks ? `${style.hidden}` : ""}>
           <li>
             <NavLink style={navLinkStyles} to="/">
-              Ana Sehife
+              Ana Səhifə
             </NavLink>
           </li>
           <li>
@@ -68,7 +78,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink style={navLinkStyles} to="/favourites">
-              <FavoriteBorderIcon />
+              <FavoriteBorderIcon className={style.materialLoveIcon} />
               <Badge badgeContent={quantity} color="secondary"></Badge>
             </NavLink>
           </li>

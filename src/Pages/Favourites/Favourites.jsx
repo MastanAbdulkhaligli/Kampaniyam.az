@@ -36,7 +36,7 @@ const Favourites = () => {
       {favor.length !== 0 ? (
         <FavouritesComponent />
       ) : (
-        <Empty location={"Favourites"} />
+        <Empty location={"Seçilmiş elanlar boşdur"} />
       )}
     </>
   );

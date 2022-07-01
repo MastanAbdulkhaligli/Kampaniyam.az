@@ -30,25 +30,55 @@ const Announcement = () => {
   // Announcement Content State
   const [announcementContent, setAnnouncementContent] = useState("");
   // Boolean state which controls
-  const [showAnnouncement, setShowAnnouncement] = useState(true);
+  const [showAnnouncement, setShowAnnouncement] = useState(false);
   // Color of Notification Bar
   const [color, setColor] = useState("");
 
-  // Get header Info from API
-  const getHeader = () => {
-    const promise = axios.get("http://localhost:3003/api/header");
-    promise.then((result) => {
-      setAnnouncementContent(result.data[0].content);
-      setColor(result.data[0].color);
-    });
+  const setCookie = (cName, cValue, expDays) => {
+    let date = new Date();
+    date.setTime(date.getTime() + expDays * 24 * 60 * 60 * 1000);
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
   };
 
   // Function which makes setShowAnnouncement false
   const makeFalse = () => {
+    setCookie("header", false, 2);
     setShowAnnouncement(false);
   };
 
-  useEffect(getHeader, []);
+  useEffect(() => {
+    // Get header Info from API
+    const getHeader = () => {
+      const promise = axios.get("http://localhost:3003/api/header");
+      promise.then((result) => {
+        setAnnouncementContent(result.data[0].content);
+        setColor(result.data[0].color);
+      });
+    };
+    const getCookie = (cName) => {
+      const name = cName + "=";
+      const cDecoded = decodeURIComponent(document.cookie); //to be careful
+      const cArr = cDecoded.split("; ");
+      let res;
+      cArr.forEach((val) => {
+        if (val.indexOf(name) === 0) res = val.substring(name.length);
+      });
+      return res;
+    };
+
+    if (getCookie("header") === "true") {
+      setShowAnnouncement(true);
+    }
+    if (getCookie("header" === "false")) {
+      setShowAnnouncement(false);
+    } else if (!getCookie("header")) {
+      setCookie("header", true, 2);
+      setShowAnnouncement(true);
+    }
+
+    getHeader();
+  }, []);
 
   const anouncementContainer = (
     <Container color={color}>

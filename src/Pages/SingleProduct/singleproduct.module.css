@@ -99,7 +99,7 @@
 
 .loveBtn {
   display: inline-block;
-  background-color: #7dc855;
+  background-color: #7856ff;
   border-radius: 6px;
   font-size: 16px;
   color: #ffffff;
@@ -109,13 +109,31 @@
 }
 
 .loveBtn:hover {
-  background-color: #246401;
+  background-color: #7f62f0;
 }
 
 .location {
   display: flex;
   margin-top: 30px;
   margin-bottom: 10px;
+}
+
+.singleTelephone {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.phoneNumber {
+  text-decoration: none;
+  color: #2ea6da;
+}
+
+.singleTelephoneIcon {
+  border: none;
+  margin-right: 5px;
+  background-color: white;
+  cursor: pointer;
+  color: #070b0d;
 }
 
 .locationIcon {

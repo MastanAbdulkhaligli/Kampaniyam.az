@@ -4,6 +4,7 @@ import style from "./singleproduct.module.css";
 import axios from "axios";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
+import PhoneIcon from "@mui/icons-material/Phone";
 
 import {
   addProduct,
@@ -28,14 +29,24 @@ const Container = styled.div`
 `;
 
 const SingleProduct = () => {
-  const [data, setData] = useState([]);
+  // Single Product Data
+  const [data, setData] = useState([{ startDate: "" }]);
+  // Single Product ID with useParams
   const { productId } = useParams();
 
+  // To control Date
+
+  const [dateStart, setDateStart] = useState("");
+  const [dateEnd, setDateEnd] = useState("");
+
+  // Other Products Data
   const [otherProducts, setOtherProducts] = useState([]);
 
+  // Redux for controlling Favoruite list
   const dispatch = useDispatch();
   const favor = useSelector((state) => state.favourites.products);
 
+  // To Control Love icon
   let heartBool = favor.filter((item) => item._id === data._id);
   let mybool = heartBool.length === 0 ? false : true;
 
@@ -64,8 +75,11 @@ const SingleProduct = () => {
       );
       setData(data.product);
       setOtherProducts(data.others);
+      setDateStart(data.product.startDate.slice(0, 10));
+      setDateEnd(data.product.startDate.slice(0, 10));
     };
     getdata();
+
     document.documentElement.scrollTo(0, 0);
   }, [productId]);
 
@@ -86,7 +100,17 @@ const SingleProduct = () => {
 
             <div className={style.location}>
               <LocationOnIcon className={style.locationIcon}></LocationOnIcon>
-              <p>{data.address}</p>
+              {/* <p>{data.address}</p> */}
+              <a href={data.address}>{data.address}</a>
+            </div>
+
+            <div className={style.singleTelephone}>
+              <PhoneIcon className={style.singleTelephoneIcon}></PhoneIcon>
+              <p>
+                <a className={style.phoneNumber} href="tel:+4733378901">
+                  +47 333 78 901
+                </a>
+              </p>
             </div>
 
             <div className={style.timeLeft}>
@@ -94,7 +118,7 @@ const SingleProduct = () => {
                 className={style.clock}
               ></AccessTimeFilledIcon>
               <p>
-                {data.startDate} -{data.endDate}
+                {dateStart} -{dateEnd}
               </p>
             </div>
           </div>
@@ -105,17 +129,6 @@ const SingleProduct = () => {
               {mybool ? " Seçilmiş elanlardan sil  " : "Seçilmiş elanlara at"}
             </a>
           </div>
-          <iframe
-            className={style.googleMap}
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12160.114471226065!2d49.8193296!3d40.3638898!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbe2c7f91235a9778!2sBeerBasha%20Restaurant!5e0!3m2!1sen!2s!4v1656555013888!5m2!1sen!2s"
-            width="300"
-            height="200"
-            frameborder="0"
-            style={{ border: 0 }}
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
         </div>
       </div>
       <div className={style.seperator}></div>

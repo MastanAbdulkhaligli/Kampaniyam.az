@@ -13,7 +13,7 @@ let hashTable = {
   Pub: "235, 140, 52",
   Parfumery: "252, 107, 3",
   Restaurant: "132, 3, 252",
-  CofeeShop: "3, 194, 252",
+  CofeeShop: "20, 122, 153",
   PubRestaurant: "235, 119, 52",
 };
 
