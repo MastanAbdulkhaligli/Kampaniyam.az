@@ -17,6 +17,10 @@ import styled from "styled-components";
 
 import RecommendationCategory from "../../Components/RecommendationCategory/RecommendationCategory";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick/lib/slider";
+
 const Container = styled.div`
   max-width: 1600px;
   /* min-height: 800px; */
@@ -93,6 +97,7 @@ const SingleProduct = () => {
           <div className={style.productDescription}>
             <h1>{data.owner}</h1>
             <span className={style.categoryText}>{data.category}</span>
+            <h3></h3>
             <h2>{data.kampaniyaName}</h2>
             <p>{data.aboutProduct}</p>
 
@@ -101,14 +106,19 @@ const SingleProduct = () => {
             <div className={style.location}>
               <LocationOnIcon className={style.locationIcon}></LocationOnIcon>
               {/* <p>{data.address}</p> */}
-              <a href={data.address}>{data.address}</a>
+              <a className={style.addressLink} href={data.address}>
+                {data.address}
+              </a>
             </div>
 
             <div className={style.singleTelephone}>
               <PhoneIcon className={style.singleTelephoneIcon}></PhoneIcon>
               <p>
-                <a className={style.phoneNumber} href="tel:+4733378901">
-                  +47 333 78 901
+                <a
+                  className={style.phoneNumber}
+                  href={`tel:${data.phoneNumber}`}
+                >
+                  {data.phoneNumber}
                 </a>
               </p>
             </div>
@@ -166,9 +176,9 @@ const SingleProduct = () => {
         })}
       </Container>
       <div className={style.seperator}></div>
-      <h2 className={style.others}>
+      <h1 className={style.others}>
         {data.category} kategoriyasinda olan diger Kampaniyalar
-      </h2>
+      </h1>
       <Container>
         <RecommendationCategory categoryName={data.category} />
       </Container>
