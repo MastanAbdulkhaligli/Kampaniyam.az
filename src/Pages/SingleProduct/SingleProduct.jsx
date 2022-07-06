@@ -75,7 +75,7 @@ const SingleProduct = () => {
   useEffect(() => {
     const getdata = async () => {
       const { data } = await axios(
-        `http://localhost:3003/api/product//others/${productId}`
+        `http://localhost:3003/api/product/others/${productId}`
       );
       setData(data.product);
       setOtherProducts(data.others);

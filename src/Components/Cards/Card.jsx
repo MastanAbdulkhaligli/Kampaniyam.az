@@ -26,6 +26,7 @@ const CardDesign = styled.div`
   background: white;
   box-shadow: unset;
   text-align: center;
+  /* hashtable color */
   border: 1px solid rgb(${(props) => props.color});
 
   transition: 0.5 ease;
@@ -59,7 +60,9 @@ const CardStats = styled.div`
   grid-template-rows: 1fr;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  /* hashtable color  */
   background: rgb(${(props) => props.color});
+  /* background: rgb(132, 3, 252); */
 `;
 
 const Stat = styled.div`
@@ -144,7 +147,13 @@ const Card = ({
         <Link to={`/product/${_id}`} style={{ textDecoration: "none" }}>
           <CardDate>{name}</CardDate>
         </Link>
-        <CardTitle>{company}</CardTitle>
+
+        <Link
+          to={`/company/${company}`}
+          style={{ textDecoration: "none", color: "unset" }}
+        >
+          <CardTitle>{company}</CardTitle>
+        </Link>
         <CardDescription>{about}</CardDescription>
         <Link to={`/product/${_id}`} style={{ textDecoration: "none" }}>
           <ReadMore>Daha Etrafli</ReadMore>

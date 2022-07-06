@@ -28,7 +28,10 @@ const Navbar = () => {
       <ul>
         <div>
           <li className={style.logo}>
-            <NavLink to="/" style={{ textDecoration: "none" }}>
+            <NavLink
+              to="/"
+              style={{ textDecoration: "none", color: "#FFFFFF" }}
+            >
               <img
                 className={style.logoImage}
                 style={{ backgroundColor: "#111324" }}
@@ -52,13 +55,13 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink style={navLinkStyles} to="/register">
-              Qeydiyyat
+            <NavLink style={navLinkStyles} to="/pricing">
+              Qiymetler
             </NavLink>
           </li>
           <li>
-            <NavLink style={navLinkStyles} to="/signin">
-              Giriş
+            <NavLink style={navLinkStyles} to="/elansahibleri">
+              Elan Sahibleri
             </NavLink>
           </li>
           <li>
