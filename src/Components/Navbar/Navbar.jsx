@@ -21,6 +21,15 @@ const Navbar = () => {
   };
 
   const quantity = useSelector((state) => state.favourites.quantity);
+  const user = useSelector((state) => state.user.currentUser);
+
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    if (user) {
+      setIsAdmin(true);
+    }
+  }, [user]);
 
   const [showLinks, setShowLinks] = useState(false);
   return (
@@ -49,6 +58,14 @@ const Navbar = () => {
           </span>
         </li>
         <div className={style.items} id={showLinks ? `${style.hidden}` : ""}>
+          {isAdmin && (
+            <li>
+              <NavLink style={navLinkStyles} to="/">
+                Admin Panel
+              </NavLink>
+            </li>
+          )}
+
           <li>
             <NavLink style={navLinkStyles} to="/">
               Ana Səhifə
@@ -65,8 +82,8 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink style={navLinkStyles} to="/signout">
-              Çıxış
+            <NavLink style={navLinkStyles} to="/signin">
+              Giris
             </NavLink>
           </li>
           <li>

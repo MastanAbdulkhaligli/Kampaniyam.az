@@ -3,16 +3,21 @@ import style from "./signin.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { login } from "../../Features/ApiCalls";
+import { useDispatch, useSelector } from "react-redux";
 
 const SignIn = () => {
+  const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
+
   const formSchema = yup.object().shape({
-    email: yup
-      .string()
-      .required("Email adresinizi daxil edin")
-      .matches(
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-        "Email formati duzgun deyyil"
-      ),
+    // email: yup
+    //   .string()
+    //   .required("Email adresinizi daxil edin")
+    //   .matches(
+    //     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    //     "Email formati duzgun deyyil"
+    //   ),
     password: yup
       .string()
       .required("Sifrenizi daxil edin")
@@ -26,7 +31,11 @@ const SignIn = () => {
     watch,
     formState: { errors },
   } = useForm(formOptions);
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const { username, password } = data;
+    login(dispatch, { username, password });
+    console.log(error);
+  };
   return (
     <div className={style.signInContainer}>
       <div className={style.containerForm}>
@@ -36,12 +45,11 @@ const SignIn = () => {
             <div className={style.inputBox}>
               <span className={style.details}>Email Adresiniz</span>
               <input
-                type="email"
-                {...register("email")}
+                {...register("username")}
                 placeholder="Email Adresinizi daxil edin"
               />
               {errors.email && (
-                <p className={style.errorForm}>{errors.email?.message}</p>
+                <p className={style.errorForm}>{errors.username?.message}</p>
               )}
             </div>
 
@@ -58,8 +66,17 @@ const SignIn = () => {
             </div>
           </div>
 
+          {error && (
+            <p
+              className={style.errorForm}
+              style={{ textAlign: "center", color: "red" }}
+            >
+              Istifadeci adi ve ya sifre sehfdir
+            </p>
+          )}
+
           <div className={style.regButton}>
-            <input type="submit" value="Daxil Ol" />
+            <input type="submit" disabled={isFetching} value="Daxil Ol" />
           </div>
         </form>
       </div>
