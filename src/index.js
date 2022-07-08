@@ -22,6 +22,8 @@ import SingleProduct from "./Pages/SingleProduct/SingleProduct";
 import { store, persistor } from "./App/store";
 import { Provider, useSelector } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+import AdminLogin from "./Pages/Admin/AdminLogin/AdminLogin";
+import ProtectedRoutes from "./CustomHooks/ProtectedRoutes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -45,6 +47,10 @@ root.render(
           <Route path="signin" element={<SignIn />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/admin" element={<AdminLogin />} />
+          </Route>
+
           <Route path="*" element={<Error />} />
         </Routes>
         {/* <Footer /> */}

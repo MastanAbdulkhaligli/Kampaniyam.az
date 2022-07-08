@@ -60,8 +60,16 @@ const Navbar = () => {
         <div className={style.items} id={showLinks ? `${style.hidden}` : ""}>
           {isAdmin && (
             <li>
-              <NavLink style={navLinkStyles} to="/">
+              <NavLink style={navLinkStyles} to="/admin">
                 Admin Panel
+              </NavLink>
+            </li>
+          )}
+
+          {isAdmin && (
+            <li>
+              <NavLink style={navLinkStyles} to="/signin">
+                Cixis
               </NavLink>
             </li>
           )}
@@ -81,11 +89,15 @@ const Navbar = () => {
               Elan Sahibleri
             </NavLink>
           </li>
-          <li>
-            <NavLink style={navLinkStyles} to="/signin">
-              Giris
-            </NavLink>
-          </li>
+
+          {!isAdmin && (
+            <li>
+              <NavLink style={navLinkStyles} to="/signin">
+                Giris
+              </NavLink>
+            </li>
+          )}
+
           <li>
             <NavLink style={navLinkStyles} to="/about">
               Haqqimizda

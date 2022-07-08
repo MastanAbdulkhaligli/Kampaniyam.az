@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./signin.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { login } from "../../Features/ApiCalls";
 import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 const SignIn = () => {
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.currentUser);
 
   const formSchema = yup.object().shape({
     // email: yup
@@ -34,8 +36,14 @@ const SignIn = () => {
   const onSubmit = (data) => {
     const { username, password } = data;
     login(dispatch, { username, password });
-    console.log(error);
   };
+
+  useEffect(() => {
+    if (user) {
+      <Navigate to="/admin" />;
+    }
+  }, []);
+
   return (
     <div className={style.signInContainer}>
       <div className={style.containerForm}>
