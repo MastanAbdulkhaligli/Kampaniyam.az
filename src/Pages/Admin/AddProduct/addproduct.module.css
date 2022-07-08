@@ -1,0 +1,16 @@
+.addProductContainer {
+  margin: 0 auto;
+}
+
+.addProductContainer form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border: 1px solid;
+  font-size: 12px;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 30%;
+}

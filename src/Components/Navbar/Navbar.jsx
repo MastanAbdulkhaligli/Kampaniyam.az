@@ -4,11 +4,12 @@ import style from "./navbar.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import LogoutIcon from "@mui/icons-material/Logout";
 import { Badge } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useSelector } from "react-redux";
 
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink } from "react-router-dom";
 import kampaniyamLogo from "../../kampaniyamLogo.svg";
 
 const Navbar = () => {
@@ -30,6 +31,11 @@ const Navbar = () => {
       setIsAdmin(true);
     }
   }, [user]);
+
+  const logout = () => {
+    localStorage.removeItem("persist:root");
+    window.location.reload(true);
+  };
 
   const [showLinks, setShowLinks] = useState(false);
   return (
@@ -66,14 +72,6 @@ const Navbar = () => {
             </li>
           )}
 
-          {isAdmin && (
-            <li>
-              <NavLink style={navLinkStyles} to="/signin">
-                Cixis
-              </NavLink>
-            </li>
-          )}
-
           <li>
             <NavLink style={navLinkStyles} to="/">
               Ana Səhifə
@@ -89,14 +87,6 @@ const Navbar = () => {
               Elan Sahibleri
             </NavLink>
           </li>
-
-          {!isAdmin && (
-            <li>
-              <NavLink style={navLinkStyles} to="/signin">
-                Giris
-              </NavLink>
-            </li>
-          )}
 
           <li>
             <NavLink style={navLinkStyles} to="/about">
@@ -114,6 +104,12 @@ const Navbar = () => {
               <Badge badgeContent={quantity} color="secondary"></Badge>
             </NavLink>
           </li>
+
+          {isAdmin && (
+            <li>
+              <LogoutIcon onClick={logout} style={{ navLinkStyles }} />
+            </li>
+          )}
         </div>
         <li className={style.searchicon}>
           {/* <input type="search" placeholder="Axtar" /> */}
