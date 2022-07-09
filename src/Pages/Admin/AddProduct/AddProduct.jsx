@@ -30,76 +30,145 @@ const AddProduct = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    const helper = (obj) => {
+      let hashTagArr = obj.hashTag;
+      hashTagArr = hashTagArr.split(" ");
+      let tempObj = { ...obj, hashTag: hashTagArr };
+      return tempObj;
+    };
+
     const res = await axios
-      .post("http://localhost:3003/api/product/add", data, config)
+      .post("http://localhost:3003/api/product/add", helper(data), config)
       .then(console.log)
       .catch(console.log);
-
-    // console.log(data.aboutProduct);
   };
 
   return (
     <div className={style.addProductContainer}>
-      <h1>AddProduct</h1>
+      <h1 style={{ textAlign: "center" }}>Kampaniya Yukle</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="text"
-          {...register("kampaniyaName")}
-          placeholder="Kampaniya Adini Daxil Edin "
-        />
+        <label>
+          Kampaniya Adini Daxil Edin:
+          <input
+            type="text"
+            {...register("kampaniyaName")}
+            placeholder="Kampaniya Adini Daxil Edin "
+          />
+        </label>
 
-        <input
-          type="text"
-          {...register("owner")}
-          placeholder="Kampaniya Sahibinin Adini Daxil Edin"
-        />
+        <label>
+          Sirketin Adini Daxil Edin:
+          <input
+            type="text"
+            {...register("owner")}
+            placeholder="Kampaniya Sahibinin Adini Daxil Edin"
+          />
+        </label>
 
-        <input
-          type="text"
-          {...register("aboutProduct")}
-          placeholder="Kampaniya Haqqinda Melumat daxil edin"
-        />
+        <label>
+          Kampaniya Haqqinda:
+          <textarea
+            name="bio"
+            rows="3"
+            cols="30"
+            {...register("aboutProduct")}
+            placeholder="Kampaniya Haqqinda Melumat daxil edin"
+          ></textarea>
+        </label>
 
-        <input
-          type="text"
-          {...register("startDate")}
-          placeholder="Baslangic tarixi"
-        />
+        <label>
+          Baslangic Tarixi
+          <input
+            type="date"
+            id="start"
+            name="trip-start"
+            min="2022-01-01"
+            max="2025-12-31"
+            {...register("startDate")}
+          />
+        </label>
 
-        <input
-          type="text"
-          {...register("endDate")}
-          placeholder="Bitis Tarixi"
-        />
+        <label>
+          Bitis Tarixi
+          <input
+            type="date"
+            id="start"
+            name="trip-start"
+            min="2022-01-01"
+            max="2025-12-31"
+            {...register("endDate")}
+          />
+        </label>
 
-        <input type="text" {...register("price")} placeholder="Qiymet" />
+        <label>
+          Qiymet
+          <input type="text" {...register("price")} placeholder="Qiymet" />
+        </label>
 
-        <input type="text" {...register("category")} placeholder="Kategoriya" />
+        <label>
+          Kategoriya
+          <input
+            type="text"
+            {...register("category")}
+            placeholder="Kategoriya"
+          />
+        </label>
 
-        <input
-          type="text"
-          {...register("image")}
-          placeholder="Sekil Linkini Daxil Edin"
-        />
+        <label>
+          Sekilin Linkini Daxil Edin:
+          <input
+            type="text"
+            {...register("image")}
+            placeholder="Sekil Linkini Daxil Edin"
+          />
+        </label>
 
-        <input
-          type="text"
-          {...register("address")}
-          placeholder="Adresi Daxil Edin"
-        />
+        <label>
+          Adresi Daxil edin
+          <input
+            type="text"
+            {...register("address")}
+            placeholder="Adresi Daxil Edin"
+          />
+        </label>
 
-        <input
-          type="text"
-          {...register("addressLink")}
-          placeholder="Adres Linkini Daxil Edin"
-        />
+        <label>
+          Addresin Google Linkini Daxil Edin
+          <input
+            type="text"
+            {...register("addressLink")}
+            placeholder="Adres Linkini Daxil Edin"
+          />
+        </label>
 
-        <input
-          type="text"
-          {...register("phoneNumber")}
-          placeholder="Telefon Nomresini Daxil Edin"
-        />
+        <label>
+          Telefon Nomresi
+          <input
+            type="text"
+            {...register("phoneNumber")}
+            placeholder="Telefon Nomresini Daxil Edin"
+          />
+        </label>
+
+        <label>
+          Paket Novunu Secin
+          <select name="referrer" {...register("productStatus")}>
+            <option value="free">Pulsuz</option>
+            <option value="beginner">Yeni Baslayanlar</option>
+            <option value="fanatic">Fanatikler</option>
+            <option value="pro">Peşəkar</option>
+          </select>
+        </label>
+
+        <label>
+          Hashtag Daxil Edin
+          <input
+            type="text"
+            {...register("hashTag")}
+            placeholder="HashTagleri Daxil Edin, Ornek: yemek,sushi,asia"
+          />
+        </label>
 
         <div>
           <input type="submit" value="Product Elave Ele" />

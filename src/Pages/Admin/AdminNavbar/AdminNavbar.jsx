@@ -3,6 +3,7 @@ import style from "./adminnavbar.module.css";
 import { Link, Navigate, NavLink } from "react-router-dom";
 
 import AddProduct from "../AddProduct/AddProduct";
+import UpdateHeader from "../UpdateHeader/UpdateHeader";
 
 import AddIcon from "@mui/icons-material/Add";
 import UpdateIcon from "@mui/icons-material/Update";
@@ -16,7 +17,7 @@ const AdminNavbar = () => {
     return {
       textDecoration: "none",
       fontWeight: isActive ? "bold" : "normal",
-      color: isActive && "#51cfdb",
+      color: isActive && "#8e8e8e",
     };
   };
   return (
@@ -30,7 +31,8 @@ const AdminNavbar = () => {
         </li>
 
         <li>
-          <UpdateIcon className={style.adminIcons} /> Update Product
+          <UpdateIcon className={style.adminIcons} />
+          Update Product
         </li>
         <li>
           <DeleteIcon className={style.adminIcons} />
@@ -38,7 +40,9 @@ const AdminNavbar = () => {
         </li>
         <li>
           <TitleIcon className={style.adminIcons} />
-          Update Header
+          <NavLink style={navLinkStyles} to="/admin/updateheader">
+            Update Header
+          </NavLink>
         </li>
         <li>
           <BusinessIcon className={style.adminIcons} />

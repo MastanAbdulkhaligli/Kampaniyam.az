@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
 import Favourites from "./Pages/Favourites/Favourites";
 import FilteredProducts from "./Pages/FilteredProducts/FilteredProducts";
+
 import Pricing from "./Pages/Pricing/Pricing";
 import OwnerPage from "./Pages/OwnerPage/OwnerPage";
 import SignOut from "./Pages/SignOut/SignOut";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import AllOwners from "./Pages/AllOwners/AllOwners";
+
 // import Register from "./Pages/Register/Register";
 import SignIn from "./Pages/SignIn/SignIn";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -24,6 +27,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import AdminLogin from "./Pages/Admin/AdminLogin/AdminLogin";
 import ProtectedRoutes from "./CustomHooks/ProtectedRoutes";
 import AddProduct from "./Pages/Admin/AddProduct/AddProduct";
+import UpdateHeader from "./Pages/Admin/UpdateHeader/UpdateHeader";
 
 function App() {
   return (
@@ -53,6 +57,7 @@ function App() {
               <Route element={<ProtectedRoutes />}>
                 <Route path="admin" element={<AdminLogin />} />
                 <Route path="admin/addproduct" element={<AddProduct />} />
+                <Route path="admin/updateheader" element={<UpdateHeader />} />
               </Route>
               <Route path="*" element={<Error />} />
             </Routes>

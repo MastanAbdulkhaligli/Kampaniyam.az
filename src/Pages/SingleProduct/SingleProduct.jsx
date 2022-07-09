@@ -106,7 +106,7 @@ const SingleProduct = () => {
             <div className={style.location}>
               <LocationOnIcon className={style.locationIcon}></LocationOnIcon>
               {/* <p>{data.address}</p> */}
-              <a className={style.addressLink} href={data.address}>
+              <a className={style.addressLink} href={data.addressLink}>
                 {data.address}
               </a>
             </div>
