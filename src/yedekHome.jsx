@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../Components/Cards/Card";
 import styled from "styled-components";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
 import SyncLoader from "react-spinners/SyncLoader";
-
-import { VirtuosoGrid } from "react-virtuoso";
 
 const CSSProperties = {
   display: "block",
@@ -23,46 +21,6 @@ const Container = styled.div`
   margin: 0 auto;
   justify-content: center;
   gap: 25px;
-`;
-
-const ItemContainer = styled.div`
-  padding: 0.5rem;
-  width: 33%;
-  display: flex;
-  flex: none;
-  align-content: stretch;
-  box-sizing: border-box;
-
-  @media (max-width: 1024px) {
-    width: 100%;
-  }
-
-  @media (max-width: 300px) {
-    width: 100%;
-  }
-`;
-
-const ItemWrapper = styled.div`
-  flex: 1;
-  text-align: center;
-  font-size: 80%;
-  padding: 1rem 1rem;
-  border: 1px solid var(gray);
-  white-space: nowrap;
-`;
-
-const ListContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  /* color: red;
-  background-color: #7856ff; */
-`;
-
-const Item = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: #7856ff;
-  color: red;
 `;
 
 const Home = () => {
@@ -118,64 +76,71 @@ const Home = () => {
 
   return (
     <>
-      {/* <InfiniteScroll
+      <InfiniteScroll
         dataLength={data.length} //This is important field to render the next data
         next={fetchData}
         hasMore={hasMore}
         // loader={<h4 style={{ textAlign: "center" }}>Loading...</h4>}
-        // loader={
-        //   <SyncLoader
-        //     color={"#36D7B7"}
-        //     loading={true}
-        //     cssOverride={CSSProperties}
-        //     size={12}
-        //   />
-        // }
+        loader={
+          <SyncLoader
+            color={"#36D7B7"}
+            loading={true}
+            cssOverride={CSSProperties}
+            size={12}
+          />
+        }
         // endMessage={
         //   <p style={{ textAlign: "center" }}>
         //     <b>Yay! You have seen it all</b>
         //   </p>
         // }
         // Implement pull down functionality
-      > */}
-      <VirtuosoGrid
-        style={{ height: "100vh" }}
-        totalCount={data.length}
-        overscan={20}
-        endReached={fetchData}
-        components={{
-          Item: ItemContainer,
-          List: ListContainer,
-          ScrollSeekPlaceholder: ({ height, width, index }) => (
-            <ItemContainer>
-              <ItemWrapper>{"--"}</ItemWrapper>
-            </ItemContainer>
-          ),
-        }}
-        data={data}
-        itemContent={(index) => (
-          <Container>
-            <div key={index}>
-              <Card
-                _id={data[index]._id}
-                name={data[index].kampaniyaName}
-                company={data[index].owner}
-                about={data[index].aboutProduct}
-                date={timeLeft(data[index].endDate)}
-                price={data[index].price}
-                category={data[index].category}
-                image={data[index].image}
-                data={data[index]}
-              />
-            </div>
-          </Container>
-        )}
-        scrollSeekConfiguration={{
-          enter: (velocity) => Math.abs(velocity) > 2000,
-          exit: (velocity) => Math.abs(velocity) < 30,
-        }}
-      />
-      {/* </InfiniteScroll> */}
+      >
+        <Container>
+          {data
+            // .filter(
+            //   (item) =>
+            //     item.kampaniyaName
+            //       .toLowerCase()
+            //       .replace(/\s/g, "")
+            //       .includes(search) ||
+            //     item.hashTag
+            //       .join("")
+            //       .toLowerCase()
+            //       .replace(/\s/g, "")
+            //       .includes(search)
+            // )
+            .map((item) => {
+              const {
+                _id,
+                kampaniyaName,
+                owner,
+                aboutProduct,
+                startDate,
+                endDate,
+                price,
+                category,
+                image,
+              } = item;
+
+              return (
+                <div key={item._id}>
+                  <Card
+                    _id={_id}
+                    name={kampaniyaName}
+                    company={owner}
+                    about={aboutProduct}
+                    date={timeLeft(endDate)}
+                    price={price}
+                    category={category}
+                    image={image}
+                    data={item}
+                  />
+                </div>
+              );
+            })}
+        </Container>
+      </InfiniteScroll>
     </>
   );
 };

@@ -1,4 +1,4 @@
-.updateHeaderContainer {
+.updateSingleProductContainer {
   width: 100%;
   /* height: 100vh; */
   margin: 0;
@@ -8,7 +8,7 @@
   font-size: 16px;
 }
 
-.updateHeaderContainer form {
+.updateSingleProductContainer form {
   width: 60vw;
   max-width: 500px;
   min-width: 300px;
@@ -18,7 +18,7 @@
   flex-direction: column;
 }
 
-.updateHeaderContainer form input {
+.updateSingleProductContainer form input {
   border-radius: 5px;
   border: 1px solid;
   font-size: 12px;
@@ -27,7 +27,7 @@
   width: 100%;
 }
 
-.updateHeaderContainer form textarea {
+.updateSingleProductContainer form textarea {
   border-radius: 5px;
   border: 1px solid;
   font-size: 12px;
@@ -36,15 +36,11 @@
   width: 100%;
 }
 
-.updateHeaderContainer form select {
+.updateSingleProductContainer form select {
   border-radius: 5px;
   border: 1px solid;
   font-size: 12px;
   margin-bottom: 20px;
   padding: 15px;
   width: 100%;
-}
-
-.updateHeaderContainer form .color {
-  padding: 20px;
 }

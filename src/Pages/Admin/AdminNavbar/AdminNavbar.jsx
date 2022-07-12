@@ -32,7 +32,9 @@ const AdminNavbar = () => {
 
         <li>
           <UpdateIcon className={style.adminIcons} />
-          Update Product
+          <NavLink style={navLinkStyles} to="/admin/updateproduct">
+            Update Product
+          </NavLink>
         </li>
         <li>
           <DeleteIcon className={style.adminIcons} />
@@ -46,7 +48,10 @@ const AdminNavbar = () => {
         </li>
         <li>
           <BusinessIcon className={style.adminIcons} />
-          Add Owner
+
+          <NavLink style={navLinkStyles} to="/admin/addowner">
+            Add Owner
+          </NavLink>
         </li>
         <li>
           <DeleteIcon className={style.adminIcons} />

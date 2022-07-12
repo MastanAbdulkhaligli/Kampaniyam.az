@@ -10,7 +10,9 @@ import SignOut from "./Pages/SignOut/SignOut";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
 import AllOwners from "./Pages/AllOwners/AllOwners";
-
+import AddOwner from "./Pages/Admin/AddOwner/AddOwner";
+import UpdateProduct from "./Pages/Admin/UpdateProduct/UpdateProduct";
+import UpdateSingleProduct from "./Pages/Admin/UpdateSingleProduct/UpdateSingleProduct";
 // import Register from "./Pages/Register/Register";
 import SignIn from "./Pages/SignIn/SignIn";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -58,6 +60,13 @@ function App() {
                 <Route path="admin" element={<AdminLogin />} />
                 <Route path="admin/addproduct" element={<AddProduct />} />
                 <Route path="admin/updateheader" element={<UpdateHeader />} />
+                <Route path="admin/addowner" element={<AddOwner />} />
+                <Route path="admin/updateproduct" element={<UpdateProduct />} />
+
+                <Route
+                  path="/admin/updateproduct/:updproductid"
+                  element={<UpdateSingleProduct />}
+                />
               </Route>
               <Route path="*" element={<Error />} />
             </Routes>

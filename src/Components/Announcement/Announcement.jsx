@@ -9,7 +9,7 @@ const Container = styled.div`
   text-align: center;
   height: 40px;
   /* background-color: teal; */
-  background-color: #${(props) => props.color};
+  background-color: ${(props) => props.color};
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
