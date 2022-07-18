@@ -15,19 +15,31 @@ const Categories = () => {
   return (
     <div className={style.scrollmenu}>
       <NavLink to={`/category/Technology`} style={navLinkStyles}>
-        Technology
+        Texnologiya
       </NavLink>
       <NavLink to={`/category/PubRestaurant`} style={navLinkStyles}>
-        Pub Restaurant
+        Pub Restoran
       </NavLink>
       <NavLink to={`/category/Parfumery`} style={navLinkStyles}>
-        Parfumery
+        Parfümeriya
       </NavLink>
       <NavLink to={`/category/Restaurant`} style={navLinkStyles}>
-        Restaurant
+        Restoran
       </NavLink>
       <NavLink to={`/category/CofeeShop`} style={navLinkStyles}>
-        Cofee Shop
+        Coffee Shops
+      </NavLink>
+      <NavLink to={`/category/Clothes`} style={navLinkStyles}>
+        Geyim
+      </NavLink>
+      <NavLink to={`/category/Tourism`} style={navLinkStyles}>
+        Turizm
+      </NavLink>
+      <NavLink to={`/category/Entertainment`} style={navLinkStyles}>
+        Əyləncə
+      </NavLink>
+      <NavLink to={`/category/Other`} style={navLinkStyles}>
+        Digər
       </NavLink>
     </div>
   );

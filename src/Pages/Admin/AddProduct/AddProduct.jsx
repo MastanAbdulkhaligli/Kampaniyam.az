@@ -45,7 +45,16 @@ const AddProduct = () => {
 
   return (
     <div className={style.addProductContainer}>
-      <h1 style={{ textAlign: "center" }}>Kampaniya Yukle</h1>
+      <h1
+        style={{
+          textAlign: "center",
+          marginBottom: "30px",
+          color: "#111324",
+          fontWeight: "normal",
+        }}
+      >
+        Kampaniya Yukle
+      </h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
@@ -108,11 +117,21 @@ const AddProduct = () => {
 
         <label>
           Kategoriya
-          <input
-            type="text"
-            {...register("category")}
-            placeholder="Kategoriya"
-          />
+          <select name="kampaniyaCategory" {...register("category")}>
+            <option value="Technology">Texnologiya</option>
+            <option value="PubRestaurant">Pub Restoran</option>
+
+            <option value="Parfumery">Parfümeriya</option>
+            <option value="Restaurant">Restoran</option>
+
+            <option value="CofeeShop">Coffee Shops</option>
+            <option value="Clothes">Geyim</option>
+
+            <option value="Tourism">Turizm</option>
+            <option value="Entertainment">Əyləncə</option>
+
+            <option value="Other">Digər</option>
+          </select>
         </label>
 
         <label>
@@ -171,7 +190,11 @@ const AddProduct = () => {
         </label>
 
         <div>
-          <input type="submit" value="Product Elave Ele" />
+          <input
+            className={style.addButton}
+            type="submit"
+            value="Product Elave Ele"
+          />
         </div>
       </form>
     </div>

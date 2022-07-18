@@ -79,18 +79,18 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink style={navLinkStyles} to="/pricing">
-              Qiymetler
+              Əməkdaşlıq
             </NavLink>
           </li>
           <li>
             <NavLink style={navLinkStyles} to="/elansahibleri">
-              Elan Sahibleri
+              Elan Sahibləri
             </NavLink>
           </li>
 
           <li>
             <NavLink style={navLinkStyles} to="/about">
-              Haqqimizda
+              Haqqımızda
             </NavLink>
           </li>
           <li>

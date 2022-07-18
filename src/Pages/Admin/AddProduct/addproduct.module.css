@@ -2,10 +2,13 @@
   width: 100%;
   /* height: 100vh; */
   margin: 0;
-  background-color: #1b1b32;
+  background-color: #fcfcff;
   color: #f5f6f7;
-  font-family: Tahoma;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
+}
+.addProductContainer label {
+  color: #111324;
 }
 
 .addProductContainer form {
@@ -25,6 +28,7 @@
   margin-bottom: 20px;
   padding: 15px;
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .addProductContainer form textarea {
@@ -43,4 +47,13 @@
   margin-bottom: 20px;
   padding: 15px;
   width: 100%;
+}
+
+.addProductContainer .addButton {
+  color: white;
+  background: #358ed7;
+}
+
+.addProductContainer .addButton:hover {
+  background: #428fcf;
 }

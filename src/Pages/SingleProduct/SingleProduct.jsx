@@ -80,7 +80,7 @@ const SingleProduct = () => {
       setData(data.product);
       setOtherProducts(data.others);
       setDateStart(data.product.startDate.slice(0, 10));
-      setDateEnd(data.product.startDate.slice(0, 10));
+      setDateEnd(data.product.endDate.slice(0, 10));
     };
     getdata();
 

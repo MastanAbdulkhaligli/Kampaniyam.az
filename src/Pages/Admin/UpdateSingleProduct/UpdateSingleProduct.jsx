@@ -11,6 +11,7 @@ const UpdateSingleProduct = () => {
   const { updproductid } = useParams();
 
   const [data, setData] = useState([{ hashTag: "error handler" }]);
+  //   const [hashTag, setHashtag] = useState("");
 
   const user = useSelector((state) => state.user.currentUser);
 
@@ -29,7 +30,7 @@ const UpdateSingleProduct = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -38,9 +39,16 @@ const UpdateSingleProduct = () => {
       const { data } = await axios.get(
         `http://localhost:3003/api/product/find/${updproductid}`
       );
-
-      console.log(data);
+      let start = data.startDate.substring(0, 10);
+      let end = data.endDate.substring(0, 10);
+      let tempObj = {
+        ...data,
+        startDate: start,
+        endDate: end,
+        hashTag: data.hashTag.join(" "),
+      };
       setData(data);
+      reset(tempObj);
     };
 
     getData();
@@ -53,9 +61,12 @@ const UpdateSingleProduct = () => {
       let tempObj = { ...obj, hashTag: hashTagArr };
       return tempObj;
     };
-
     const res = await axios
-      .post("http://localhost:3003/api/product/add", helper(data), config)
+      .put(
+        `http://localhost:3003/api/product/${updproductid}`,
+        helper(data),
+        config
+      )
       .then(console.log)
       .catch(console.log);
   };
@@ -105,7 +116,7 @@ const UpdateSingleProduct = () => {
             name="trip-start"
             min="2022-01-01"
             max="2025-12-31"
-            defaultValue={data.startDate}
+            defaultValue="2022-03-16"
             {...register("startDate")}
           />
         </label>
@@ -135,12 +146,21 @@ const UpdateSingleProduct = () => {
 
         <label>
           Kategoriya
-          <input
-            type="text"
-            {...register("category")}
-            placeholder="Kategoriya"
-            defaultValue={data.category}
-          />
+          <select name="kampaniyaCategory" {...register("category")}>
+            <option value="Technology">Texnologiya</option>
+            <option value="PubRestaurant">Pub Restoran</option>
+
+            <option value="Parfumery">Parfümeriya</option>
+            <option value="Restaurant">Restoran</option>
+
+            <option value="CofeeShop">Coffee Shops</option>
+            <option value="Clothes">Geyim</option>
+
+            <option value="Tourism">Turizm</option>
+            <option value="Entertainment">Əyləncə</option>
+
+            <option value="Other">Digər</option>
+          </select>
         </label>
 
         <label>
@@ -203,7 +223,6 @@ const UpdateSingleProduct = () => {
             type="text"
             {...register("hashTag")}
             placeholder="HashTagleri Daxil Edin, Ornek: yemek,sushi,asia"
-            defaultValue={data.length > 2 ? data.hashTag.join(" ") : ""}
           />
         </label>
 

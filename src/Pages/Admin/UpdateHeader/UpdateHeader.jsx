@@ -8,6 +8,7 @@ import * as yup from "yup";
 
 const UpdateHeader = () => {
   const [headerId, setHeaderId] = useState();
+  const [headerText, setHeaderText] = useState("");
   const user = useSelector((state) => state.user.currentUser);
 
   let token = "";
@@ -33,6 +34,7 @@ const UpdateHeader = () => {
     const getId = async () => {
       const { data } = await axios.get("http://localhost:3003/api/header");
       setHeaderId(data[0]._id);
+      setHeaderText(data[0].content);
     };
 
     getId();
@@ -57,6 +59,7 @@ const UpdateHeader = () => {
             rows="3"
             cols="30"
             {...register("content")}
+            defaultValue={headerText}
             placeholder="Kampaniya Haqqinda Melumat daxil edin"
           ></textarea>
         </label>
@@ -67,6 +70,7 @@ const UpdateHeader = () => {
             className={style.color}
             type="color"
             id="colorpicker"
+            defaultValue="#7856FF"
             {...register("color")}
           />
         </label>

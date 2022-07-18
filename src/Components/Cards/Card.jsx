@@ -9,12 +9,14 @@ import {
 } from "../../Features/Favourites/favouritesSlice";
 
 let hashTable = {
-  Technology: "50, 168, 115",
-  Pub: "235, 140, 52",
+  Technology: "8, 54, 128",
+  PubRestaurant: "129, 84, 56", // OK
   Parfumery: "252, 107, 3",
   Restaurant: "132, 3, 252",
-  CofeeShop: "20, 122, 153",
-  PubRestaurant: "235, 119, 52",
+  CofeeShop: "210, 123, 82",
+  Clothes: "36, 201, 116",
+  Tourism: "0, 204, 255", //OK
+  Entertainment: "168, 50, 86",
 };
 
 const CardDesign = styled.div`

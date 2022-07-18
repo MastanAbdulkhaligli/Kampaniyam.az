@@ -139,7 +139,7 @@ const Home = () => {
         // Implement pull down functionality
       > */}
       <VirtuosoGrid
-        style={{ height: "100vh" }}
+        style={{ height: "80vh" }}
         totalCount={data.length}
         overscan={20}
         endReached={fetchData}
