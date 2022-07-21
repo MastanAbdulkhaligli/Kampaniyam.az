@@ -22,7 +22,17 @@ const UpdateProduct = () => {
 
   return (
     <div className={style.updateProductContainer}>
-      <h1 style={{ textAlign: "center" }}>Update Product</h1>
+      <h1 style={{ textAlign: "center" }}></h1>
+      <h1
+        style={{
+          textAlign: "center",
+          marginBottom: "20px",
+          color: "#111324",
+          fontWeight: "normal",
+        }}
+      >
+        Update Product
+      </h1>
       <table className={style.contentTable}>
         <thead>
           <tr>

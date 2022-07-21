@@ -2,10 +2,14 @@
   width: 100%;
   /* height: 100vh; */
   margin: 0;
-  background-color: #1b1b32;
+  background-color: #fcfcff;
   color: #f5f6f7;
-  font-family: Tahoma;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
+}
+
+.updateHeaderContainer label {
+  color: #111324;
 }
 
 .updateHeaderContainer form {
@@ -25,6 +29,7 @@
   margin-bottom: 20px;
   padding: 15px;
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .updateHeaderContainer form textarea {
@@ -47,4 +52,14 @@
 
 .updateHeaderContainer form .color {
   padding: 20px;
+}
+
+.updateHeaderContainer .addButton {
+  color: white;
+  background: #358ed7;
+  box-shadow: unset;
+}
+
+.updateHeaderContainer .addButton:hover {
+  background: #428fcf;
 }

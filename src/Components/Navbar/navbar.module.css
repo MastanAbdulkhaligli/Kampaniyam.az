@@ -146,7 +146,8 @@ nav ul li.btn span {
     z-index: 1;
     overflow-x: hidden;
     position: fixed;
-    top: 59px;
+    /* top: 59px; */
+    top: 92px;
     left: 0;
     width: 250px;
     background-color: #111324f7;

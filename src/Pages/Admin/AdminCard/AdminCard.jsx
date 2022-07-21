@@ -40,7 +40,8 @@ const AdminCard = ({ id, index, ownerName, timeLeft, kampaniyaName }) => {
       <td>
         <Link
           to={`/admin/updateproduct/${id}`}
-          style={{ textDecoration: "none", color: "green" }}
+          // style={{ textDecoration: "none", color: "green" }}
+          className={style.updateProduct}
         >
           Yenile
           {/* <button className={style.updateProduct}></button> */}

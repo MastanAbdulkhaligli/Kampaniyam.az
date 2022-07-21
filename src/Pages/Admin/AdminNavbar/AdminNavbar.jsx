@@ -33,13 +33,10 @@ const AdminNavbar = () => {
         <li>
           <UpdateIcon className={style.adminIcons} />
           <NavLink style={navLinkStyles} to="/admin/updateproduct">
-            Update Product
+            Delete and Update Products
           </NavLink>
         </li>
-        <li>
-          <DeleteIcon className={style.adminIcons} />
-          Delete Product
-        </li>
+
         <li>
           <TitleIcon className={style.adminIcons} />
           <NavLink style={navLinkStyles} to="/admin/updateheader">
@@ -55,7 +52,7 @@ const AdminNavbar = () => {
         </li>
         <li>
           <DeleteIcon className={style.adminIcons} />
-          Delete Owner
+          Delete and Update Owners
         </li>
         <li>
           <AddchartIcon className={style.adminIcons} />

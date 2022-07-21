@@ -73,31 +73,49 @@ const Navbar = () => {
           )}
 
           <li>
-            <NavLink style={navLinkStyles} to="/">
+            <NavLink
+              onClick={() => setShowLinks(!showLinks)}
+              style={navLinkStyles}
+              to="/"
+            >
               Ana Səhifə
             </NavLink>
           </li>
           <li>
-            <NavLink style={navLinkStyles} to="/pricing">
+            <NavLink
+              onClick={() => setShowLinks(!showLinks)}
+              style={navLinkStyles}
+              to="/pricing"
+            >
               Əməkdaşlıq
             </NavLink>
           </li>
           <li>
-            <NavLink style={navLinkStyles} to="/elansahibleri">
+            <NavLink
+              onClick={() => setShowLinks(!showLinks)}
+              style={navLinkStyles}
+              to="/elansahibleri"
+            >
               Elan Sahibləri
             </NavLink>
           </li>
 
           <li>
-            <NavLink style={navLinkStyles} to="/about">
+            <NavLink
+              onClick={() => setShowLinks(!showLinks)}
+              style={navLinkStyles}
+              to="/about"
+            >
               Haqqımızda
             </NavLink>
           </li>
-          <li>
+
+          {/* <li>
             <NavLink style={navLinkStyles} to="/contact">
               Əlaqə
             </NavLink>
-          </li>
+          </li> */}
+
           <li>
             <NavLink style={navLinkStyles} to="/favourites">
               <FavoriteBorderIcon className={style.materialLoveIcon} />

@@ -5,9 +5,8 @@
   width: 95%;
   /* height: 100vh; */
   margin: 0 auto;
-
-  color: black;
-  font-family: Tahoma;
+  background-color: #fcfcff;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   border-collapse: collapse;
   border-radius: 5px 5px 0 0f;
@@ -20,7 +19,7 @@
 }
 
 .contentTable thead tr {
-  background-color: #009879;
+  background-color: #40114d;
   color: white;
   text-align: left;
   height: 40px;
@@ -58,8 +57,7 @@
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+
   font-size: 14px;
   font-weight: 500;
   height: 40px;

@@ -6,8 +6,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import style from "./addproduct.module.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddProduct = () => {
+  const notifySuccess = () => toast("Product Yuklendi", { theme: "dark" });
+  const notifyFailure = () => toast("Problem Bas Verdi :(", { theme: "dark" });
+
   const user = useSelector((state) => state.user.currentUser);
 
   let token = "";
@@ -39,8 +44,8 @@ const AddProduct = () => {
 
     const res = await axios
       .post("http://localhost:3003/api/product/add", helper(data), config)
-      .then(console.log)
-      .catch(console.log);
+      .then(() => notifySuccess())
+      .catch(() => notifyFailure());
   };
 
   return (
@@ -196,6 +201,19 @@ const AddProduct = () => {
             value="Product Elave Ele"
           />
         </div>
+
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          toastClassName="dark-toast"
+        />
       </form>
     </div>
   );

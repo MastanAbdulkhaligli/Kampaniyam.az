@@ -52,6 +52,7 @@
 .addProductContainer .addButton {
   color: white;
   background: #358ed7;
+  box-shadow: unset;
 }
 
 .addProductContainer .addButton:hover {
